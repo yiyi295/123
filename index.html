@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="description" content="YIYANG STUDIO — 校园摄影社作品集，记录光影、校园与青春。">
+<title>YIYANG STUDIO — Campus Photography Club</title>
+<style>
+:root{--bg:#0b0b0b;--panel:#121212;--gold:#c7a66a;--gold2:#ead4a3;--muted:#92908a;--line:rgba(199,166,106,.23);--white:#f3f0e9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:.02em}a{color:inherit;text-decoration:none}button{font:inherit}
+.topline{height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+header{position:fixed;z-index:20;top:3px;left:0;width:100%;padding:22px 6.5%;display:flex;align-items:center;justify-content:space-between;background:rgba(11,11,11,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:34px;height:34px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:20px}.brand-name{font-size:13px;letter-spacing:.24em;font-weight:600}.brand-name span{display:block;font-size:8px;color:var(--muted);letter-spacing:.28em;margin-top:4px}
+nav{display:flex;gap:30px;align-items:center}nav a{font-size:11px;color:#c4c0b7;letter-spacing:.14em;transition:.25s}nav a:hover{color:var(--gold2)}.nav-cta{border:1px solid var(--line);padding:10px 15px;color:var(--gold2)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--gold);padding:8px 11px}
+.hero{min-height:92vh;padding:150px 6.5% 70px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(5,5,5,.91) 0%,rgba(5,5,5,.62) 45%,rgba(5,5,5,.12) 100%),linear-gradient(0deg,#0b0b0b 0%,transparent 40%),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=88') center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 60%,rgba(199,166,106,.08));pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:780px}.eyebrow{color:var(--gold);font-size:10px;letter-spacing:.35em;text-transform:uppercase}.hero h1{font-family:Georgia,"Songti SC",serif;font-weight:400;font-size:clamp(48px,8vw,108px);line-height:1.02;letter-spacing:.015em;margin:25px 0}.hero h1 em{color:var(--gold2);font-style:normal}.hero p{color:#c4c0b7;max-width:470px;line-height:1.9;font-size:14px}.hero-actions{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;font-size:10px;letter-spacing:.17em;text-transform:uppercase;border:1px solid var(--gold);transition:.25s}.btn.primary{background:var(--gold);color:#111}.btn:hover{background:var(--gold2);color:#111;border-color:var(--gold2)}.hero-index{position:absolute;right:6.5%;bottom:75px;color:rgba(255,255,255,.65);font:italic 13px Georgia;z-index:2}
+section{padding:105px 6.5%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:42px}.kicker{font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}.section-title{font:400 clamp(34px,5vw,58px) Georgia,"Songti SC",serif;margin:12px 0 0}.section-note{font-size:12px;color:var(--muted);line-height:1.8;max-width:300px}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:8%;align-items:center}.about-image{min-height:480px;background:url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=85') center/cover;position:relative}.about-image:after{content:"";position:absolute;inset:15px;border:1px solid rgba(234,212,163,.55)}.about-copy p{color:#aaa69d;font-size:14px;line-height:2.1}.stats{display:flex;gap:38px;margin-top:35px}.stat strong{display:block;color:var(--gold2);font:36px Georgia}.stat span{display:block;color:var(--muted);font-size:9px;letter-spacing:.15em;margin-top:8px}
+#works{background:#101010}.filters{display:flex;gap:9px;flex-wrap:wrap}.filter{background:transparent;border:1px solid #34312b;color:#aaa;padding:9px 14px;font-size:10px;letter-spacing:.12em;cursor:pointer}.filter.active,.filter:hover{border-color:var(--gold);color:var(--gold2);background:rgba(199,166,106,.08)}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.work{position:relative;overflow:hidden;background:#1b1b1b;cursor:pointer;min-height:260px}.work:nth-child(1),.work:nth-child(6){grid-column:span 7}.work:nth-child(2),.work:nth-child(5){grid-column:span 5}.work:nth-child(3),.work:nth-child(4){grid-column:span 6}.work img{width:100%;height:100%;min-height:300px;object-fit:cover;display:block;filter:saturate(.78);transition:transform .7s,filter .5s}.work:hover img{transform:scale(1.045);filter:saturate(1)}.work:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.8))}.work-info{position:absolute;z-index:1;left:24px;right:24px;bottom:21px;display:flex;justify-content:space-between;align-items:end}.work-info small{display:block;color:var(--gold2);font-size:9px;letter-spacing:.2em;margin-bottom:8px}.work-info h3{font:400 23px Georgia,"Songti SC",serif;margin:0}.work-info span{font-size:10px;color:#d1c9b8}
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.event{border-top:1px solid var(--line);padding:24px 0}.event-num{color:var(--gold);font:italic 15px Georgia}.event h3{font:400 22px Georgia,"Songti SC",serif;margin:16px 0 10px}.event p{font-size:12px;color:var(--muted);line-height:1.9}
+.join{background:linear-gradient(90deg,rgba(8,8,8,.93),rgba(8,8,8,.72)),url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1800&q=85') center/cover;padding:100px 6.5%;display:flex;align-items:center;justify-content:space-between;gap:35px}.join h2{font:400 clamp(35px,5vw,60px) Georgia,"Songti SC",serif;margin:13px 0}.join p{color:#aaa;font-size:13px;line-height:1.8}
+footer{padding:35px 6.5%;display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid #292722;color:#777;font-size:10px;letter-spacing:.1em}.footer-brand{color:var(--gold2);letter-spacing:.22em}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:50;display:none;align-items:center;justify-content:center;padding:35px}.lightbox.open{display:flex}.lightbox img{max-width:min(1100px,90vw);max-height:82vh;object-fit:contain}.close{position:absolute;right:28px;top:22px;background:none;border:1px solid #777;color:white;padding:10px 14px;cursor:pointer}
+@media(max-width:760px){header{padding:15px 5%}nav{display:none;position:absolute;top:69px;left:0;right:0;padding:22px 6%;background:#101010;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu{display:block}.hero{min-height:82vh;padding:130px 6% 65px;background-position:58% center}.hero-index{right:6%;bottom:25px}.section-head{display:block}.section-note{margin-top:18px}.about-grid{grid-template-columns:1fr}.about-image{min-height:330px;order:2}.stats{gap:24px}.gallery{display:block}.work{margin-bottom:15px;min-height:250px}.work img{min-height:280px}.events{grid-template-columns:1fr}.join{display:block}.join .btn{margin-top:18px}footer{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+ <a class="brand" href="#home"><div class="brand-mark">Y</div><div class="brand-name">YIYANG STUDIO<span>CAMPUS PHOTOGRAPHY CLUB</span></div></a>
+ <nav id="nav"><a href="#home">首页 / HOME</a><a href="#about">关于 / ABOUT</a><a href="#works">作品 / WORKS</a><a href="#activities">社团动态</a><a class="nav-cta" href="#join">加入我们</a></nav>
+ <button class="menu" id="menu" aria-label="打开菜单">MENU</button>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="hero-content"><div class="eyebrow">A VISUAL JOURNEY · EST. 2026</div><h1>看见光，<br><em>记录热爱。</em></h1><p>我们用镜头收藏校园里的每一个瞬间。关于青春、关于光影，也关于那些值得被记住的故事。</p><div class="hero-actions"><a class="btn primary" href="#works">探索作品集&nbsp; ↗</a><a class="btn" href="#about">认识摄影社</a></div></div>
+ <div class="hero-index">01 — 06&nbsp; / &nbsp;YIYANG ARCHIVE</div>
+</section>
+<section id="about">
+ <div class="about-grid"><div class="about-image" role="img" aria-label="相机静物摄影"></div><div class="about-copy"><div class="kicker">WHO WE ARE</div><h2 class="section-title">不止于拍摄，<br>更是观察世界。</h2><p>YIYANG STUDIO 是一个以影像为语言的校园摄影社。我们记录校园日常、人物肖像、自然风光与重要活动，也在一次次按下快门的过程中，学习观察、表达与创造。</p><p>这里没有固定的风格边界。无论你使用专业相机，还是手机，只要对影像保有好奇，都能在这里找到自己的位置。</p><div class="stats"><div class="stat"><strong>01</strong><span>SEE THE LIGHT</span></div><div class="stat"><strong>∞</strong><span>STORIES TO TELL</span></div><div class="stat"><strong>2026</strong><span>OUR NEW CHAPTER</span></div></div></div></div>
+</section>
+<section id="works">
+ <div class="section-head"><div><div class="kicker">SELECTED COLLECTION</div><h2 class="section-title">精选作品</h2></div><div class="section-note">每一张照片，都是一次凝视。<br>点击图片，沉浸式欣赏作品。</div></div>
+ <div class="filters" aria-label="作品分类"><button class="filter active" data-filter="all">全部作品</button><button class="filter" data-filter="campus">校园纪实</button><button class="filter" data-filter="portrait">人物肖像</button><button class="filter" data-filter="landscape">自然风光</button><button class="filter" data-filter="street">城市街头</button></div>
+ <div class="gallery" id="gallery">
+  <article class="work" data-category="landscape"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=88" alt="山湖风光"><div class="work-info"><div><small>LANDSCAPE · 001</small><h3>山与湖之间</h3></div><span>↗ VIEW</span></div></article>
+  <article class="work" data-category="campus"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=88" alt="校园建筑"><div class="work-info"><div><small>CAMPUS · 002</small><h3>青春的坐标</h3></div><span>↗ VIEW</span></div></article>
+  <article class="work" data-category="portrait"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=88" alt="人物肖像"><div class="work-info"><div><small>PORTRAIT · 003</small><h3>此刻的你</h3></div><span>↗ VIEW</span></div></article>
+  <article class="work" data-category="street"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=88" alt="城市夜景"><div class="work-info"><div><small>STREET · 004</small><h3>城市入夜</h3></div><span>↗ VIEW</span></div></article>
+  <article class="work" data-category="campus"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=88" alt="教室日常"><div class="work-info"><div><small>CAMPUS · 005</small><h3>日常切片</h3></div><span>↗ VIEW</span></div></article>
+  <article class="work" data-category="landscape"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=88" alt="自然风景"><div class="work-info"><div><small>LANDSCAPE · 006</small><h3>旷野来信</h3></div><span>↗ VIEW</span></div></article>
+ </div>
+</section>
+<section id="activities">
+ <div class="section-head"><div><div class="kicker">INSIDE THE STUDIO</div><h2 class="section-title">社团日常</h2></div><div class="section-note">从灵感交流到实地拍摄，<br>让热爱在每一次创作中发生。</div></div>
+ <div class="events"><div class="event"><div class="event-num">01 / LEARN</div><h3>摄影分享与交流</h3><p>分享拍摄经验、构图思路与后期技巧，在交流中拓宽影像表达的可能。</p></div><div class="event"><div class="event-num">02 / CREATE</div><h3>主题外拍计划</h3><p>围绕季节、校园生活与节日主题开展创作，用镜头建立属于我们的影像档案。</p></div><div class="event"><div class="event-num">03 / EXHIBIT</div><h3>作品展映与发布</h3><p>精选社员作品，参与校园活动记录与主题影展，让更多人看见我们的视角。</p></div></div>
+</section>
+<section class="join" id="join"><div><div class="kicker">BE PART OF THE STORY</div><h2>让我们一起，<br>记录下一帧。</h2><p>热爱摄影的你，欢迎加入 YIYANG STUDIO。<br>带上好奇心，和我们一起发现日常里的不平凡。</p></div><a class="btn primary" href="mailto:photography@example.com?subject=加入YIYANG%20STUDIO">联系摄影社&nbsp; ↗</a></section>
+</main>
+<footer><div class="footer-brand">YIYANG STUDIO</div><div>CAMPUS PHOTOGRAPHY CLUB · 2026</div><div>用镜头，记录热爱。</div></footer>
+<div class="lightbox" id="lightbox"><button class="close" id="close">CLOSE ✕</button><img id="lightboxImg" alt="作品大图"></div>
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ document.querySelectorAll('.work').forEach(card=>card.style.display=(btn.dataset.filter==='all'||card.dataset.category===btn.dataset.filter)?'block':'none');
+}));
+const lightbox=document.getElementById('lightbox'),lbImg=document.getElementById('lightboxImg');
+document.querySelectorAll('.work img').forEach(img=>img.addEventListener('click',()=>{lbImg.src=img.src.replace(/w=\d+/,'w=2000');lightbox.classList.add('open')}));
+document.getElementById('close').addEventListener('click',()=>lightbox.classList.remove('open'));
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lightbox.classList.remove('open')});
+</script>
+</body>
+</html>
